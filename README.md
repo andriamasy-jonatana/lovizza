@@ -1,5 +1,5 @@
 # Andriamasy Jonatana
-![Angular CI](https://github.com/andriamasy-jonatana/lovizza/workflows/Node.js%20CI/badge.svg)
+![Angular CI](https://github.com/andriamasy-jonatana/lovizza/workflows/Angular%20CI/badge.svg)
 ## TP IONIC
 
 ###### From ionic blank starter
