@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { CommanderPageRoutingModule } from './commander-routing.module';
 
 import { CommanderPage } from './commander.page';
+import {PizzaService} from '../../services/pizza/pizza.service';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { CommanderPage } from './commander.page';
     IonicModule,
     CommanderPageRoutingModule
   ],
-  declarations: [CommanderPage]
+  declarations: [CommanderPage],
+  providers: [PizzaService]
 })
 export class CommanderPageModule {}

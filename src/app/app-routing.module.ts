@@ -7,7 +7,16 @@ const routes: Routes = [
   {
     path: 'commander',
     loadChildren: () => import('./pages/commander/commander.module').then( m => m.CommanderPageModule)
+  },
+  {
+    path: 'pizza/:id',
+    loadChildren: () => import('./pages/pizza/pizza.module').then( m => m.PizzaPageModule)
+  },  {
+    path: 'panier',
+    loadChildren: () => import('./pages/panier/panier.module').then( m => m.PanierPageModule)
   }
+
+
 
 ];
 
