@@ -14,10 +14,10 @@
 <ion-content>
   <ion-list>
     <ion-item *ngFor="let p of pizzas">
-      <ion-thumbnail routerLink="/pizza/:id">
+      <ion-thumbnail routerLink="/pizza">
         <img src="{{ p.photo }}">
       </ion-thumbnail>
-      <ion-label routerLink="/pizza/:id">
+      <ion-label routerLink="/pizza">
         <h3>{{ p.nom }}</h3>
         <p>Prix : {{ p.prix }}</p>
       </ion-label>

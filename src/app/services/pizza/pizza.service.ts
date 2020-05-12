@@ -32,14 +32,30 @@ export class PizzaService {
     }
 
     getPizzas(): Observable<any> {
-        return this.http.get('https://api.ynov.jcatania.io/pizza', httpOptions)
+        return this.http.get('https://api.ynov.jcatania.io/pizza')
           .pipe(
-            map(this.extractData),
-            catchError(this.handleError)
+            map(value => {
+                if (value) {
+                    return value;
+                } else {
+                    throw new Error('Aucune Pizza trouvée');
+                }
+            })
           );
     }
 
-    getPizzaById(pizzaId: number) {
-        // détails d'une pizza
+    getPizzaById(id: string, nom: string, prix: string, ingredients: [], photo: string): Observable<Pizza> {
+        return this.http.get<iPizza[]>('https://api.ynov.jcatania.io/pizza?id=' + id)
+          .pipe(
+            map(value => {
+                if (value.length > 0) {
+                    return value[0];
+                } else {
+                    throw new Error('Aucune Pizza trouvée');
+                }
+            }),
+            map(value => new Pizza(value.id, value.nom, value.prix, value.ingredients, value.photo))
+          );
+
     }
 }
