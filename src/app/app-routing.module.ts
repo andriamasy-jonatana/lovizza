@@ -5,17 +5,19 @@ const routes: Routes = [
   { path: '', redirectTo: 'accueil', pathMatch: 'full' },
   { path: 'accueil', loadChildren: () => import('./pages/accueil/accueil.module').then( m => m.AccueilPageModule) },
   {
-    path: 'commander',
-    loadChildren: () => import('./pages/commander/commander.module').then( m => m.CommanderPageModule)
+    path: 'pizzas',
+    loadChildren: () => import('./pages/pizzas/pizzas.module').then( m => m.PizzasPageModule)
   },
   {
-    path: 'pizza',
-    loadChildren: () => import('./pages/pizza/pizza.module').then( m => m.PizzaPageModule)
+    path: 'pizzas/:id',
+    loadChildren: () => import('./pages/pizza-details/pizza-details.module').then( m => m.PizzaDetailsPageModule)
   },
   {
     path: 'panier',
     loadChildren: () => import('./pages/panier/panier.module').then( m => m.PanierPageModule)
   }
+
+
 
 
 

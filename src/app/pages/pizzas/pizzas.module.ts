@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { PizzaPageRoutingModule } from './pizza-routing.module';
+import { PizzasPageRoutingModule } from './pizzas-routing.module';
 
-import { PizzaPage } from './pizza.page';
+import { PizzasPage } from './pizzas.page';
 import {PizzaService} from '../../services/pizza/pizza.service';
 
 @NgModule({
@@ -14,9 +14,9 @@ import {PizzaService} from '../../services/pizza/pizza.service';
     CommonModule,
     FormsModule,
     IonicModule,
-    PizzaPageRoutingModule
+    PizzasPageRoutingModule
   ],
-  declarations: [PizzaPage],
+  declarations: [PizzasPage],
   providers: [PizzaService]
 })
-export class PizzaPageModule {}
+export class PizzasPageModule {}
