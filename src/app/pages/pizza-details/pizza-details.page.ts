@@ -10,13 +10,8 @@ import {PizzaService} from '../../services/pizza/pizza.service';
 })
 export class PizzaDetailsPage implements OnInit {
   id = '';
-  nom = '';
-  prix = '';
-  ingredients: [];
-  photo = '';
 
-  pizza: Pizza;
-  error: string;
+  pizza: any = {};
 
   constructor(private activatedRoute: ActivatedRoute, private pizzaService: PizzaService) { }
 
@@ -26,11 +21,13 @@ export class PizzaDetailsPage implements OnInit {
   }
 
   getPizzaDetail() {
-    this.pizzaService.getPizzaById(this.id, this.nom, this.prix, this.ingredients, this.photo)
-      .subscribe(pizza => this.pizza = pizza,
-        error => {
-          this.error = error;
-        });
+    this.pizzaService.getPizzaById(this.id)
+      .subscribe(res => {
+        this.pizza = res;
+        console.log(this.pizza);
+      }, err => {
+        console.log(err);
+      });
   }
 
 }

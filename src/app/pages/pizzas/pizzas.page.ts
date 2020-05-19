@@ -8,16 +8,7 @@ import {PizzaService} from '../../services/pizza/pizza.service';
   styleUrls: ['./pizzas.page.scss'],
 })
 export class PizzasPage implements OnInit {
-  id = '';
-  nom = '';
-  prix = '';
-  ingredients: [];
-  photo = '';
-
-  pizzas: any;
-
-  pizza: Pizza;
-  error: string;
+  pizzas: any = [];
 
   constructor(private pizzaService: PizzaService) { }
 
@@ -29,17 +20,10 @@ export class PizzasPage implements OnInit {
     this.pizzaService.getPizzas()
       .subscribe(res => {
         this.pizzas = res;
+        console.log(this.pizzas);
       }, err => {
         console.log(err);
       });
-  }
-
-  getPizzaDetail() {
-    this.pizzaService.getPizzaById(this.id, this.nom, this.prix, this.ingredients, this.photo)
-      .subscribe(pizza => this.pizza = pizza,
-        error => {
-          this.error = error;
-        });
   }
 
   addPanier() {}
