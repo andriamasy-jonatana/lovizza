@@ -15,4 +15,16 @@ export class PizzaService {
     getPizzaById(id: string): Observable<any> {
         return this.http.get('https://api.ynov.jcatania.io/pizza/' + id);
     }
+
+    addPizza(pizza: any) {
+        // return this.http.post(`${this.pizzaUrl}`, pizza);
+    }
+
+    updatePizza(pizza: any) {
+        // return this.http.put(`${this.pizzaUrl}/${pizza.id}`, pizza);
+    }
+
+    deletePizza(id: string) {
+        // return this.http.delete(Url + id);
+    }
 }
