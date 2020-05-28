@@ -1,26 +1,25 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>Accueil</ion-title>
+    <ion-title>Administration</ion-title>
     <ion-buttons slot="start">
       <ion-menu-button menu="main-menu"></ion-menu-button>
+      <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
-    <ion-button slot="end" routerLink="/panier">
-      <ion-icon name="cart-outline"></ion-icon>
-    </ion-button>
   </ion-toolbar>
 
   <ion-toolbar>
-    <ion-title>Commander une pizza</ion-title>
+    <ion-title>Administrer une pizza ou un ingrédient</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-card>
     <ion-card-content style="text-align: center">
-      <p>Cliquer ci-dessous pour commander une pizza</p>
-      <ion-button routerLink="/pizzas">
-        <ion-icon name="reader-outline"></ion-icon>
-        Commander
+      <ion-button routerLink="/admin/admin-pizza">
+        Pizza
+      </ion-button>
+      <ion-button routerLink="/admin/admin-ingredient">
+        Ingrédient
       </ion-button>
     </ion-card-content>
   </ion-card>

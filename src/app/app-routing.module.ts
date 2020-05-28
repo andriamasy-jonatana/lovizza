@@ -15,7 +15,11 @@ const routes: Routes = [
   {
     path: 'panier',
     loadChildren: () => import('./pages/panier/panier.module').then( m => m.PanierPageModule)
+  },  {
+    path: 'admin',
+    loadChildren: () => import('./pages/admin/admin.module').then( m => m.AdminPageModule)
   }
+
 
 
 

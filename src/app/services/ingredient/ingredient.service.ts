@@ -2,9 +2,8 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
+
 export class IngredientService {
 
   constructor(private http: HttpClient) { }
@@ -26,6 +25,6 @@ export class IngredientService {
   }
 
   deleteIngredient(id: string) {
-    // return this.http.delete(Url + id);
+    return this.http.delete('https://api.ynov.jcatania.io/ingredient/' + id);
   }
 }

@@ -8,6 +8,7 @@ import { PizzaDetailsPageRoutingModule } from './pizza-details-routing.module';
 
 import { PizzaDetailsPage } from './pizza-details.page';
 import {PizzaService} from '../../services/pizza/pizza.service';
+import {IngredientService} from '../../services/ingredient/ingredient.service';
 
 @NgModule({
   imports: [
@@ -17,6 +18,6 @@ import {PizzaService} from '../../services/pizza/pizza.service';
     PizzaDetailsPageRoutingModule
   ],
   declarations: [PizzaDetailsPage],
-  providers: [PizzaService]
+  providers: [PizzaService, IngredientService]
 })
 export class PizzaDetailsPageModule {}

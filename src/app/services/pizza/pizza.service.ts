@@ -25,6 +25,6 @@ export class PizzaService {
     }
 
     deletePizza(id: string) {
-        // return this.http.delete(Url + id);
+        return this.http.delete('https://api.ynov.jcatania.io/pizza/' + id);
     }
 }

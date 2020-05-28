@@ -1,12 +1,12 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>Commander</ion-title>
+    <ion-title>Admin-pizza</ion-title>
     <ion-buttons slot="start">
       <ion-menu-button menu="main-menu"></ion-menu-button>
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
-    <ion-button slot="end" routerLink="/panier">
-      <ion-icon name="cart-outline"></ion-icon>
+    <ion-button routerLink="/admin/add-pizza" slot="end">
+      <ion-icon name="add-outline"></ion-icon>
     </ion-button>
   </ion-toolbar>
 </ion-header>
@@ -14,14 +14,17 @@
 <ion-content>
   <ion-list>
     <ion-item *ngFor="let p of pizzas">
-      <ion-thumbnail routerLink="/pizzas/{{ p.id }}">
+      <ion-thumbnail>
         <img src="{{ p.photo }}">
       </ion-thumbnail>
-      <ion-label routerLink="/pizzas/{{ p.id }}">
+      <ion-label>
         <h3>{{ p.nom }}</h3>
         <p>Prix : {{ p.prix }}</p>
       </ion-label>
-      <ion-button (click)="addPanier()">Ajouter au panier</ion-button>
+      <ion-button routerLink="/admin/admin-pizza/{{ p.id }}">Modifier</ion-button>
+      <ion-button (click)="deletePizza(p.id)">
+        <ion-icon name="trash-outline"></ion-icon>
+      </ion-button>
     </ion-item>
   </ion-list>
 </ion-content>

@@ -1,15 +1,15 @@
 export default class Pizza {
     id: string;
     nom: string;
-    prix: string;
-    ingredients: [];
+    prix: number;
     photo: string;
+    ingredient: [];
 
-    constructor(id: string, nom: string, prix: string, ingredients: [], photo: string) {
+    constructor(id: string, nom: string, prix: number, photo: string, ingredient: []) {
         this.id = id;
         this.nom = nom;
         this.prix = prix;
-        this.ingredients = ingredients;
         this.photo = photo;
+        this.ingredient = ingredient;
     }
 }

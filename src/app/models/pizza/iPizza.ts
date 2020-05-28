@@ -1,7 +1,7 @@
 export default interface IPizza {
     id: string;
     nom: string;
-    prix: string;
-    ingredients: [];
+    prix: number;
     photo: string;
+    ingredient: [];
 }

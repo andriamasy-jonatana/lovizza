@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import Pizza from '../../services/models/Pizza';
 import {ActivatedRoute} from '@angular/router';
 import {PizzaService} from '../../services/pizza/pizza.service';
 import {IngredientService} from '../../services/ingredient/ingredient.service';
@@ -27,12 +26,10 @@ export class PizzaDetailsPage implements OnInit {
     this.pizzaService.getPizzaById(this.id)
       .subscribe(res => {
         this.pizza = res;
-        console.log(this.pizza);
         for (let i = 0; i < this.pizza.ingredients.length; i++) {
             this.ingredientService.getIngredientById(this.pizza.ingredients[i])
               .subscribe(resIng => {
                   this.ingredients[i] = resIng;
-                  console.log(this.ingredients[i]);
                   }, err => {
                   console.log(err);
               });
