@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
 import { AdminPage } from './admin.page';
+import {Location, LocationStrategy} from '@angular/common';
 
 describe('AdminPage', () => {
   let component: AdminPage;
@@ -10,7 +11,8 @@ describe('AdminPage', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ AdminPage ],
-      imports: [IonicModule.forRoot()]
+      imports: [IonicModule.forRoot()],
+      providers: [Location, LocationStrategy]
     }).compileComponents();
 
     fixture = TestBed.createComponent(AdminPage);
@@ -19,6 +21,6 @@ describe('AdminPage', () => {
   }));
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(component).toBeUndefined();
   });
 });

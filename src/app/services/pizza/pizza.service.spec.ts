@@ -1,9 +1,19 @@
 import { TestBed } from '@angular/core/testing';
 
 import { PizzaService } from './pizza.service';
+import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
 
 describe('PizzaService', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
+  let httpTestingController: HttpTestingController;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
+      providers: [PizzaService]
+    });
+
+    httpTestingController = TestBed.get(HttpTestingController);
+  });
 
   it('should be created', () => {
     const service: PizzaService = TestBed.get(PizzaService);

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {CommonModule, Location} from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { PanierPageRoutingModule } from './panier-routing.module';
 
 import { PanierPage } from './panier.page';
+import {PanierService} from '../../services/panier/panier.service';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { PanierPage } from './panier.page';
     IonicModule,
     PanierPageRoutingModule
   ],
-  declarations: [PanierPage]
+  declarations: [PanierPage],
+  providers: [PanierService, Location]
 })
 export class PanierPageModule {}

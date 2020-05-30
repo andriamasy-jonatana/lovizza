@@ -8,6 +8,15 @@
 
 Projet IONIC application de pizza Web Mobile M1 DevWeb
 
+### Avancement du projet :
+- CI *NON FAIT*
+- Affichage Pizzas et détails d'une pizza *fait MAIS à modifier avec bonne méthode* :white_check_mark:
+- Panier *NON FAIT*
+- Administration *En cours* :
+    - Suppression d'une pizza ou ingrédients *fait mais sans message avertissement*
+    - Ajout pizza ou ingrédient *En cours*
+    - Modification pizza ou ingrédient *NON FAIT*
+
 ### Quelques éléments ou besoin
 
 - Ionic:
@@ -35,8 +44,3 @@ Projet IONIC application de pizza Web Mobile M1 DevWeb
 #### Consignes application
 
 - lien consigne : https://github.com/juu-aix-ynov-campus/tp-ionic-02/wiki/Consignes-application-Pizza
-
-#### Liste des ressources https://api.ynov.jcatania.io/db
-
-- Pizza : https://api.ynov.jcatania.io/pizza
-- Ingrédient : https://api.ynov.jcatania.io/ingredient
