@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {PizzaService} from '../../../services/pizza/pizza.service';
 import {ActivatedRoute} from '@angular/router';
-import {AlertController} from '@ionic/angular';
+
+declare var window;
 
 @Component({
   selector: 'app-admin-pizza',
@@ -12,7 +13,9 @@ export class AdminPizzaPage implements OnInit {
   id: string;
   pizzas: any = [];
 
-  constructor(private pizzaService: PizzaService, private activatedRoute: ActivatedRoute) { }
+  constructor(private pizzaService: PizzaService, private activatedRoute: ActivatedRoute) {
+    window.Location = this;
+  }
 
   ngOnInit() {
     // A l'initialisation on récupère la liste des pizzas

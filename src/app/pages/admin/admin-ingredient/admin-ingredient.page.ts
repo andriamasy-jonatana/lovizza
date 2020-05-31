@@ -3,6 +3,7 @@ import {ActivatedRoute} from '@angular/router';
 import {IngredientService} from '../../../services/ingredient/ingredient.service';
 
 declare var window;
+
 @Component({
   selector: 'app-admin-ingredient',
   templateUrl: './admin-ingredient.page.html',

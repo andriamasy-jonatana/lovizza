@@ -28,6 +28,7 @@ export class FormIngredientPage implements OnInit {
     this.ingredientService.addIngredient(this.ingredient)
       .subscribe(data => {
         console.log(data);
+        // Redirection vers la liste des ingredients
         this.route.navigateByUrl('/admin/admin-ingredient').then(() => {
           window.Location.getIngredients();
         });

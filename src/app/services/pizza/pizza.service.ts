@@ -45,8 +45,8 @@ export class PizzaService {
      * @param pizza
      * @return JSON
      */
-    addPizza(pizza) {
-        // return this.http.post();
+    addPizza(pizza): Observable<Pizza> {
+        return this.http.post<Pizza>('https://api.ynov.jcatania.io/pizza', pizza);
     }
 
     /**
