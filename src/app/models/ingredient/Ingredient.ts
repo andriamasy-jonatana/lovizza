@@ -1,4 +1,4 @@
-export default class User {
+export default class Ingredient {
     id: string;
     nom: string;
 

@@ -1,9 +1,25 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>form-ingredient</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+      <ion-back-button defaultHref="/admin/admin-ingredient"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <ion-toolbar>
+    <ion-title>Formulaire ingrédient</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <form (ngSubmit)="ajoutIngredient()">
+    <ion-item>
+      <ion-label>Nom :</ion-label>
+      <ion-input type="text" name="nom" [(ngModel)]="ingredient.nom"></ion-input>
+    </ion-item>
+    <div class="ion-padding">
+      <ion-button expand="block" type="submit" class="ion-no-margin">Ajouter</ion-button>
+    </div>
+  </form>
 </ion-content>

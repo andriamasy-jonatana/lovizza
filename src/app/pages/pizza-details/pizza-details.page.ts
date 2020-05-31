@@ -17,15 +17,17 @@ export class PizzaDetailsPage implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private pizzaService: PizzaService, private ingredientService: IngredientService) { }
 
   ngOnInit() {
+    // Récupération de l'id dans l'URL
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
     this.getPizzaDetail();
-    this.getIngredients();
   }
 
+  // Récupération des détails d'une pizza séléctionné
   getPizzaDetail() {
     this.pizzaService.getPizzaById(this.id)
       .subscribe(res => {
         this.pizza = res;
+        // Boucle pour récupérer les informations de chaque ingrédient de la liste
         for (let i = 0; i < this.pizza.ingredients.length; i++) {
             this.ingredientService.getIngredientById(this.pizza.ingredients[i])
               .subscribe(resIng => {
@@ -37,16 +39,6 @@ export class PizzaDetailsPage implements OnInit {
       }, err => {
         console.log(err);
       });
-  }
-
-  getIngredients() {
-      this.ingredientService.getIngredientById(this.pizza.ingredients)
-        .subscribe(resIng => {
-            this.ingredients = resIng;
-            console.log(this.ingredients);
-        }, err => {
-            console.log(err);
-        });
   }
 
 }

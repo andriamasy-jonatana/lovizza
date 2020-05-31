@@ -15,6 +15,7 @@ export class PizzasPage implements OnInit {
     this.getPizzas();
   }
 
+  // Récupération de la liste de toutes les pizzas
   getPizzas() {
     this.pizzaService.getPizzas()
       .subscribe(res => {
@@ -25,6 +26,7 @@ export class PizzasPage implements OnInit {
       });
   }
 
+  // Ajout dans le panier de la pizza séléctionner
   addPanier() {}
 
 }

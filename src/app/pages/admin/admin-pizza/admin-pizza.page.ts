@@ -15,10 +15,13 @@ export class AdminPizzaPage implements OnInit {
   constructor(private pizzaService: PizzaService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    // A l'initialisation on récupère la liste des pizzas
     this.getPizzas();
+    // Récupération de l'id de la pizza séléctionné pour la modifier
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
   }
 
+  // Récupération de la liste de toutes les pizzas
   getPizzas() {
     this.pizzaService.getPizzas()
       .subscribe(res => {
@@ -28,6 +31,7 @@ export class AdminPizzaPage implements OnInit {
       });
   }
 
+  // Suppression d'une pizza
   deletePizza(idPizza) {
     this.pizzaService.deletePizza(idPizza)
       .subscribe(res => {
