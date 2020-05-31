@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import Pizza from '../../../../models/pizza/Pizza';
 import {PizzaService} from '../../../../services/pizza/pizza.service';
 import {Router} from '@angular/router';
-import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 
 declare var window;
 
@@ -23,7 +22,7 @@ export class FormPizzaPage implements OnInit {
   imgData: string;
 
 
-  constructor(private pizzaService: PizzaService, private route: Router, private camera: Camera) {
+  constructor(private pizzaService: PizzaService, private route: Router) {
     this.pizza = new Pizza(this.id, this.nom, this.prix, this.photo, this.ingredient);
   }
 
@@ -46,19 +45,6 @@ export class FormPizzaPage implements OnInit {
   }
 
   takePicture() {
-    const options: CameraOptions = {
-      quality: 100,
-      destinationType: this.camera.DestinationType.DATA_URL,
-      encodingType: this.camera.EncodingType.JPEG,
-      mediaType: this.camera.MediaType.PICTURE,
-      correctOrientation: true
-    };
-
-    this.camera.getPicture(options).then((imageData) => {
-      console.log(imageData);
-      this.imgData = 'data:image/jpeg;base64,' + imageData;
-    }, (error) => {
-      console.log('Error camera', error);
-    });
+    console.log('photo cliqué');
   }
 }

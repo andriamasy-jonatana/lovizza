@@ -10,11 +10,12 @@ Projet IONIC application de pizza Web Mobile M1 DevWeb
 
 ### Avancement du projet :
 - CI *NON FAIT*
-- Affichage Pizzas et détails d'une pizza *fait MAIS à modifier avec bonne méthode* :white_check_mark:
+- Affichage Pizzas et détails d'une pizza *fait* :white_check_mark:
 - Panier *NON FAIT*
 - Administration *En cours* :
-    - Suppression d'une pizza ou ingrédients *fait mais sans message avertissement*
-    - Ajout pizza ou ingrédient *En cours*
+    - Suppression d'une pizza ou ingrédient *fait* :white_check_mark:
+    - Ajout pizza *Fait sans photo*
+    - Ajout ingrédient *Fait*
     - Modification pizza ou ingrédient *NON FAIT*
 
 ### Quelques éléments ou besoin
