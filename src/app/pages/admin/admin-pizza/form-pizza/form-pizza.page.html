@@ -14,8 +14,9 @@
 
 <ion-content>
   <form (ngSubmit)="ajoutPizza()">
-    <ion-item>
+    <ion-item (click)="takePicture()">
       <ion-label>Photo :</ion-label>
+      <ion-icon name="wine" slot="start"></ion-icon>
       <ion-input type="text" name="photo" [(ngModel)]="pizza.photo"></ion-input>
     </ion-item>
     <ion-item>
@@ -30,4 +31,8 @@
       <ion-button expand="block" type="submit" class="ion-no-margin">Ajouter</ion-button>
     </div>
   </form>
+
+  <ion-card *ngIf="imgData">
+    <img [src]="imgData">
+  </ion-card>
 </ion-content>
